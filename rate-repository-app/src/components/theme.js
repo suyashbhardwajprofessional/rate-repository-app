@@ -23,7 +23,7 @@ const theme = {
   fontWeights: {
     light: '200',
     normal: '400',
-    bold: '700',
+    heavy: '700',
   },
   topPaddings: {
     regular: Constants.statusBarHeight,
