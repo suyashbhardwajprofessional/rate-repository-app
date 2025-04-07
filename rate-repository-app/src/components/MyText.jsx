@@ -12,6 +12,12 @@ const styles = StyleSheet.create({
   colorTextSecondary: {
     color: theme.colors.textSecondary,
   },
+  colorTextLight: {
+    color: theme.colors.textBlack,
+  },
+  colorTextDark: {
+    color: theme.colors.textWhite,
+  },
   colorPrimary: {
     color: theme.colors.fillPrimary,
   },
@@ -21,15 +27,21 @@ const styles = StyleSheet.create({
   fontWeightHeavy: {
     fontWeight: theme.fontWeights.heavy,
   },
+  fontWeightNormal: {
+    fontWeight: theme.fontWeights.normal,
+  },
 });
 
 const MyText = ({ color, fontSize, fontWeight, style, ...props }) => {
   const textStyle = [
     styles.text,
+    color === 'textLight' && styles.colorTextLight,
+    color === 'textDark' && styles.colorTextDark,
     color === 'textSecondary' && styles.colorTextSecondary,
     color === 'primary' && styles.colorPrimary,
     fontSize === 'subheading' && styles.fontSizeSubheading,
     fontWeight === 'bold' && styles.fontWeightHeavy,
+    fontWeight === 'normal' && styles.fontWeightNormal,
     style,
   ];
 
