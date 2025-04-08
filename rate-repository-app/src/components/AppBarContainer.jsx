@@ -3,12 +3,16 @@ import theme from './theme';
 
 const styles = StyleSheet.create({
   view: {
-  	paddingTop: theme.topPaddings.regular,
     backgroundColor: theme.colors.fillApplcationPaletteOne,
     color: theme.colors.textWhite,
     fontSize: theme.fontSizes.body,
     fontFamily: theme.fonts.main,
     fontWeight: theme.fontWeights.normal,
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'nowrap',
+    maxHeight: 60,
+    alignItems: 'flex-end',
   },
   colorTextSecondary: {
     color: theme.colors.textSecondary,
@@ -37,18 +41,18 @@ const styles = StyleSheet.create({
 });
 
 const AppBarContainer = ({ ambience, detailing, style, ...props }) => {
-	const viewStyle = [
-	    styles.view,
-	    ambience === 'light' && styles.colorFillVanilla,
-	    ambience === 'dark' && styles.colorFillDarkChocolate,
-	    detailing == 'gross' && styles.fontWeightBold,
-	    detailing == 'normal' && styles.fontWeightNormal,
-	    detailing == 'sharp' && styles.fontWeightSmall,
-	    style,
-  	];
-	return (
-		<NativeView style = {viewStyle} {...props} />
-	)
+  const viewStyle = [
+      styles.view,
+      ambience === 'light' && styles.colorFillVanilla,
+      ambience === 'dark' && styles.colorFillDarkChocolate,
+      detailing == 'gross' && styles.fontWeightBold,
+      detailing == 'normal' && styles.fontWeightNormal,
+      detailing == 'sharp' && styles.fontWeightSmall,
+      style,
+    ];
+  return (
+      <NativeView style = {viewStyle} {...props} />
+  )
 }
 
 export default AppBarContainer

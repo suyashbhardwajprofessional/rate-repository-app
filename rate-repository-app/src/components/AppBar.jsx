@@ -1,10 +1,14 @@
 import AppBarTab from './AppBarTab';
 import AppBarContainer from './AppBarContainer';
+import { ScrollView } from 'react-native';
 
 const AppBar = () => {
   return (
     <AppBarContainer>
-      <AppBarTab titled="Repositories" />
+      <ScrollView horizontal={true}>
+        <AppBarTab titled="SignIn" leadTo="signin" />
+        <AppBarTab titled="Repositories" leadTo="repositories" />
+      </ScrollView>
     </AppBarContainer>
     );
 };

@@ -1,22 +1,24 @@
 import MyText from './MyText';
-import { Alert, Pressable, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import theme from './theme';
+import { Link } from 'react-router-native'
 
 const styles = StyleSheet.create({
   tabStyle: {
-    padding: 20,
+    padding: 10,
+    flexGrow: 0,
   },
 });
 
-const AppBarTab = ({ titled }) => {
+const AppBarTab = ({ titled, leadTo }) => {
 	return (
-		<Pressable onPress={()=>Alert.alert('Will lead you to somewhere soon..')}>
 			<View style={styles.tabStyle}>
-				<MyText fontSize='subheading'>
-					{titled}
-				</MyText>
+				<Link to={`/${leadTo}`} >
+					<MyText fontSize='subheading'>
+						{titled}
+					</MyText>
+				</Link>
 			</View>
-		</Pressable>
 		)
 }
 
