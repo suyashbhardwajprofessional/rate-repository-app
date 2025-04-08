@@ -2,10 +2,13 @@
 	"folders":
 	[
 		{
-			"path": "."
+			"path": ".",
 		},
 		{
-			"path": "/home/yash/groundworks/fullstackopen/groundworkMobile"
-		}
-	]
+			"path": "/home/yash/groundworks/fullstackopen/groundworkMobile",
+		},
+		{
+			"path": "/home/yash/uohFSOpart10/rate-repository-api"
+		},
+	],
 }
