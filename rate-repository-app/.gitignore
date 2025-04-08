@@ -36,3 +36,5 @@ yarn-error.*
 
 # not needed to push
 package-lock.json
+*.sublime-project
+*.sublime-workspace
