@@ -4,42 +4,6 @@
 		"selected_items":
 		[
 			[
-				"padding",
-				"paddingHorizontal"
-			],
-			[
-				"Scrol",
-				"ScrollView"
-			],
-			[
-				"overfl",
-				"overflow"
-			],
-			[
-				"align",
-				"alignItems"
-			],
-			[
-				"flex",
-				"flexDirection"
-			],
-			[
-				"margin",
-				"marginBottom"
-			],
-			[
-				"fle",
-				"flexDirection"
-			],
-			[
-				"border",
-				"borderRadius"
-			],
-			[
-				"back",
-				"backgroundColor"
-			],
-			[
 				"Repo",
 				"RepositoryList"
 			],
@@ -164,6 +128,14 @@
 				"returnedBlog"
 			],
 			[
+				"back",
+				"backgroundColor"
+			],
+			[
+				"flex",
+				"flexDirection"
+			],
+			[
 				"Blog",
 				"BlogForm"
 			],
@@ -254,6 +226,10 @@
 			[
 				"blo",
 				"blog"
+			],
+			[
+				"align",
+				"align-self"
 			],
 			[
 				"respo",
@@ -392,6 +368,10 @@
 				"MainAppRoutes"
 			],
 			[
+				"margin",
+				"marginTop"
+			],
+			[
 				"add",
 				"addTodo"
 			],
@@ -514,410 +494,31 @@
 			[
 				"componentDid",
 				"componentDidMount"
+			],
+			[
+				"useEff",
+				"useEffect\tuseEffect"
+			],
+			[
+				"Basic",
+				"BasicModal"
+			],
+			[
+				"han",
+				"handleClose"
+			],
+			[
+				"ali",
+				"alignItems"
+			],
+			[
+				"borde",
+				"borderRadius"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "src/components/RepositoryList.jsx",
-			"settings":
-			{
-				"buffer_size": 2410,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			},
-			"undo_stack":
-			[
-				[
-					23,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AQAAAG8AAAAAAAAAcAAAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAbwAAAAAAAABvAAAAAAAAAP///////+9/"
-				],
-				[
-					24,
-					1,
-					"paste",
-					null,
-					"AQAAAHAAAAAAAAAAnAAAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAcAAAAAAAAABwAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					50,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AgAAAGEGAAAAAAAAYgYAAAAAAAAAAAAAYgYAAAAAAABkBgAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAYQYAAAAAAABhBgAAAAAAAP///////+9/"
-				],
-				[
-					51,
-					1,
-					"paste",
-					null,
-					"AQAAAGQGAAAAAAAAlwYAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAZAYAAAAAAABkBgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					54,
-					1,
-					"insert",
-					{
-						"characters": "\n\n"
-					},
-					"BQAAAJcGAAAAAAAAmAYAAAAAAAAAAAAAmAYAAAAAAACaBgAAAAAAAAAAAACaBgAAAAAAAJsGAAAAAAAAAAAAAJsGAAAAAAAAnQYAAAAAAAAAAAAAmAYAAAAAAACYBgAAAAAAAAIAAAAgIA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAlwYAAAAAAACXBgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					55,
-					1,
-					"paste",
-					null,
-					"AQAAAJsGAAAAAAAA5wcAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAmwYAAAAAAACbBgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					56,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AgAAAOcHAAAAAAAA6AcAAAAAAAAAAAAA6AcAAAAAAADqBwAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAA5wcAAAAAAADnBwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					93,
-					1,
-					"right_delete",
-					null,
-					"AgAAADYHAAAAAAAANgcAAAAAAAABAAAANecHAAAAAAAA5wcAAAAAAAACAAAAICA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAANgcAAAAAAAA2BwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					94,
-					1,
-					"insert",
-					{
-						"characters": "4"
-					},
-					"AQAAADYHAAAAAAAANwcAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAANgcAAAAAAAA2BwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					109,
-					2,
-					"right_delete",
-					null,
-					"AgAAADMHAAAAAAAAMwcAAAAAAAABAAAAMzMHAAAAAAAAMwcAAAAAAAABAAAAMw",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAMwcAAAAAAAAzBwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					111,
-					1,
-					"insert",
-					{
-						"characters": "239"
-					},
-					"AwAAADMHAAAAAAAANAcAAAAAAAAAAAAANAcAAAAAAAA1BwAAAAAAAAAAAAA1BwAAAAAAADYHAAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAMwcAAAAAAAAzBwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					162,
-					1,
-					"right_delete",
-					null,
-					"AQAAAJAHAAAAAAAAkAcAAAAAAAABAAAACg",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAkAcAAAAAAACQBwAAAAAAAP///////+9/"
-				],
-				[
-					193,
-					1,
-					"insert",
-					{
-						"characters": "\n\n"
-					},
-					"BQAAAOcHAAAAAAAA6AcAAAAAAAAAAAAA6AcAAAAAAADqBwAAAAAAAAAAAADqBwAAAAAAAOsHAAAAAAAAAAAAAOsHAAAAAAAA7QcAAAAAAAAAAAAA6AcAAAAAAADoBwAAAAAAAAIAAAAgIA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAA5wcAAAAAAADnBwAAAAAAAP///////+9/"
-				],
-				[
-					194,
-					1,
-					"paste",
-					null,
-					"AQAAAOsHAAAAAAAAcQgAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAA6wcAAAAAAADrBwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					253,
-					3,
-					"left_delete",
-					null,
-					"AwAAAKMIAAAAAAAAowgAAAAAAAABAAAAc6IIAAAAAAAAoggAAAAAAAABAAAAZaEIAAAAAAAAoQgAAAAAAAABAAAAaQ",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAApAgAAAAAAACkCAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					254,
-					1,
-					"insert",
-					{
-						"characters": "yNo"
-					},
-					"AwAAAKEIAAAAAAAAoggAAAAAAAAAAAAAoggAAAAAAACjCAAAAAAAAAAAAACjCAAAAAAAAKQIAAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAoQgAAAAAAAChCAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					256,
-					1,
-					"insert",
-					{
-						"characters": "des"
-					},
-					"AwAAAKQIAAAAAAAApQgAAAAAAAAAAAAApQgAAAAAAACmCAAAAAAAAAAAAACmCAAAAAAAAKcIAAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAApAgAAAAAAACkCAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					328,
-					1,
-					"left_delete",
-					null,
-					"AQAAADcHAAAAAAAANwcAAAAAAAABAAAANA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAOAcAAAAAAAA4BwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					329,
-					1,
-					"insert",
-					{
-						"characters": "5"
-					},
-					"AQAAADcHAAAAAAAAOAcAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAANwcAAAAAAAA3BwAAAAAAAAAAAAAAAPC/"
-				]
-			]
-		},
-		{
-			"file": "src/components/Main.jsx",
-			"redo_stack":
-			[
-				[
-					50,
-					1,
-					"paste",
-					null,
-					"AQAAAMQCAAAAAAAAxAIAAAAAAAA+AAAAPFJvdXRlIHBhdGg9JyonIGVsZW1lbnQ9ezxOYXZpZ2F0ZSB0bz0nL3NpZ25pbicgcmVwbGFjZSAvPn0gLz4",
-					"AQAAAAAAAAABAAAAAgMAAAAAAAACAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					49,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AgAAALwCAAAAAAAAvAIAAAAAAAAIAAAAICAgICAgICC7AgAAAAAAALsCAAAAAAAAAQAAAAo",
-					"AQAAAAAAAAABAAAAxAIAAAAAAADEAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					43,
-					1,
-					"right_delete",
-					null,
-					"AgAAAKsCAAAAAAAArAIAAAAAAAAAAAAAqwIAAAAAAAC1AgAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAqwIAAAAAAACrAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					41,
-					1,
-					"cut",
-					null,
-					"AQAAALUCAAAAAAAA8wIAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAtQIAAAAAAAC1AgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					126,
-					1,
-					"paste",
-					null,
-					"AQAAACECAAAAAAAAIQIAAAAAAAAJAAAAPEFwcEJhci8+",
-					"AQAAAAAAAAABAAAAEwIAAAAAAAATAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					125,
-					1,
-					"right_delete",
-					null,
-					"AQAAACECAAAAAAAAJAIAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAIQIAAAAAAAAhAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					120,
-					1,
-					"right_delete",
-					null,
-					"AQAAACICAAAAAAAAagIAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAIQIAAAAAAAAkAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					89,
-					1,
-					"right_delete",
-					null,
-					"AgAAAPgBAAAAAAAA+QEAAAAAAAAAAAAA+AEAAAAAAAD+AQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAIgIAAAAAAABqAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					87,
-					1,
-					"cut",
-					null,
-					"AQAAAP4BAAAAAAAABwIAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA/gEAAAAAAAD4AQAAAAAAAAAAAAAAAAAA"
-				],
-				[
-					66,
-					1,
-					"close_tag",
-					{
-						"insert_slash": true
-					},
-					"AQAAAE8DAAAAAAAATwMAAAAAAAABAAAALw",
-					"AQAAAAAAAAABAAAABwIAAAAAAAD+AQAAAAAAAAAAAAAAAEhA"
-				],
-				[
-					54,
-					1,
-					"insert",
-					{
-						"characters": "te"
-					},
-					"AgAAAFMDAAAAAAAAUwMAAAAAAAABAAAAZVIDAAAAAAAAUgMAAAAAAAABAAAAdA",
-					"AQAAAAAAAAABAAAATwMAAAAAAABPAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					53,
-					1,
-					"left_delete",
-					null,
-					"AwAAAFIDAAAAAAAAUwMAAAAAAAAAAAAAUwMAAAAAAABUAwAAAAAAAAAAAABUAwAAAAAAAFUDAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAUgMAAAAAAABSAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					52,
-					1,
-					"insert",
-					{
-						"characters": "Rouite"
-					},
-					"BgAAAFQDAAAAAAAAVAMAAAAAAAABAAAAZVMDAAAAAAAAUwMAAAAAAAABAAAAdFIDAAAAAAAAUgMAAAAAAAABAAAAaVEDAAAAAAAAUQMAAAAAAAABAAAAdVADAAAAAAAAUAMAAAAAAAABAAAAb08DAAAAAAAATwMAAAAAAAABAAAAUg",
-					"AQAAAAAAAAABAAAAVQMAAAAAAABVAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					49,
-					1,
-					"insert",
-					{
-						"characters": "<>"
-					},
-					"AgAAAE8DAAAAAAAATwMAAAAAAAABAAAAPk4DAAAAAAAATgMAAAAAAAABAAAAPA",
-					"AQAAAAAAAAABAAAATwMAAAAAAABPAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					48,
-					1,
-					"left_delete",
-					null,
-					"AQAAAE4DAAAAAAAATwMAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAATgMAAAAAAABOAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					46,
-					1,
-					"left_delete",
-					null,
-					"AQAAAE8DAAAAAAAAUAMAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAATwMAAAAAAABPAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					45,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AgAAAEYDAAAAAAAARgMAAAAAAAAKAAAAICAgICAgICAgIEUDAAAAAAAARQMAAAAAAAABAAAACg",
-					"AQAAAAAAAAABAAAAUAMAAAAAAABQAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					42,
-					1,
-					"indent",
-					null,
-					"AwAAAP0CAAAAAAAA/QIAAAAAAAACAAAAICDFAgAAAAAAAMUCAAAAAAAAAgAAACAgfwIAAAAAAAB/AgAAAAAAAAIAAAAgIA",
-					"AQAAAAAAAAABAAAARQMAAAAAAABFAwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					34,
-					1,
-					"insert",
-					{
-						"characters": "\t"
-					},
-					"AQAAAB0CAAAAAAAAHQIAAAAAAAACAAAAICA",
-					"AQAAAAAAAAABAAAAhwIAAAAAAAA/AwAAAAAAAP///////+9/"
-				],
-				[
-					13,
-					1,
-					"paste",
-					null,
-					"AQAAAB0CAAAAAAAAHQIAAAAAAABfAAAAPFJvdXRlIGVsZW1lbnQgPSB7PE1hc3RlckxheW91dCBzaG93U2lkZUJhciA9IHtzaG93U2lkZUJhcn0gdG9nZ2xlU2lkZWJhciA9IHt0b2dnbGVTaWRlYmFyfS8+fT4",
-					"AQAAAAAAAAABAAAAHQIAAAAAAAAdAgAAAAAAAAAAAAAAAEhA"
-				],
-				[
-					11,
-					1,
-					"insert",
-					{
-						"characters": "\n"
-					},
-					"AgAAABcCAAAAAAAAFwIAAAAAAAAGAAAAICAgICAgFgIAAAAAAAAWAgAAAAAAAAEAAAAK",
-					"AQAAAAAAAAABAAAAHQIAAAAAAAAdAgAAAAAAAAAAAAAAAPC/"
-				]
-			],
-			"settings":
-			{
-				"buffer_size": 785,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "import { useState, useEffect } from 'react';\n// ...\n\nconst RepositoryList = () => {\n  const [repositories, setRepositories] = useState();\n\n  const fetchRepositories = async () => {\n    // Replace the IP address part with your own IP address!\n    const response = await fetch('http://192.168.1.33:5000/api/repositories');\n    const json = await response.json();\n\n    console.log(json);\n\n    setRepositories(json);\n  };\n\n  useEffect(() => {\n    fetchRepositories();\n  }, []);\n\n  // Get the nodes from the edges array\n  const repositoryNodes = repositories\n    ? repositories.edges.map(edge => edge.node)\n    : [];\n\n  return (\n    <FlatList\n      data={repositoryNodes}\n      // Other props\n    />\n  );\n};\n\nexport default RepositoryList;",
-			"settings":
-			{
-				"buffer_size": 734,
-				"line_ending": "Unix"
-			},
-			"undo_stack":
-			[
-				[
-					4,
-					1,
-					"",
-					null,
-					"AQAAAAAAAAAAAAAA3gIAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
-				]
-			]
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -931,8 +532,12 @@
 		"selected_items":
 		[
 			[
+				"impo",
+				"Import Helper: List imports"
+			],
+			[
 				"import",
-				"Import Helper: Update source modules"
+				"Import Helper: List imports"
 			],
 			[
 				"Install Package Control",
@@ -993,10 +598,6 @@
 			[
 				"pretti",
 				"JsPrettier: Format Code"
-			],
-			[
-				"impo",
-				"Import Helper: Insert import"
 			],
 			[
 				"imp",
@@ -1131,31 +732,25 @@
 	},
 	"expanded_folders":
 	[
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app",
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/src",
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/src/components"
+		"/home/yash/rate-repository-app/rate-repository-app",
+		"/home/yash/rate-repository-app/rate-repository-app/src"
 	],
 	"file_history":
 	[
-		"/home/yash/uohFSOpart10/rate-repository-api/.env",
-		"/home/yash/uohFSOpart10/rate-repository-api/src/app.js",
-		"/home/yash/uohFSOpart10/rate-repository-api/src/api/index.js",
-		"/home/yash/uohFSOpart10/rate-repository-api/src/api/repositories/index.js",
-		"/home/yash/uohFSOpart10/rate-repository-api/src/api/repositories/getRepositories.js",
-		"/home/yash/uohFSOpart10/rate-repository-api/src/config.js",
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/App.js",
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/src/components/Main.jsx",
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/src/components/SignIn.jsx",
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/src/components/RepositoryList.jsx",
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/src/components/RepositoryItem.jsx",
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/src/components/AppBar.jsx",
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/src/components/AppBarContainer.jsx",
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/src/components/theme.js",
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/src/components/MyText.jsx",
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/src/components/AppBarTab.jsx",
-		"/home/yash/uohFSOpart10/rate-repository-app/.gitignore",
-		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/node_modules/expo-constants/build/Constants.js",
+		"/home/yash/rate-repository-app/rate-repository-app/src/components/RepositoryList.jsx",
+		"/home/yash/rate-repository-app/rate-repository-app/package.json",
+		"/home/yash/rate-repository-app/rate-repository-app/metro.config.js",
+		"/home/yash/rate-repository-app/rate-repository-app/src/utils/apolloClient.js",
+		"/home/yash/rate-repository-app/rate-repository-app/src/hooks/useRepositories.js",
+		"/home/yash/rate-repository-app/rate-repository-app/App.js",
+		"/home/yash/rate-repository-app/rate-repository-app/src/graphql/queries.js",
+		"/home/yash/rate-repository-app/rate-repository-app/.gitignore",
+		"/home/yash/rate-repository-app/rate-repository-app/src/components/Main.jsx",
+		"/home/yash/rate-repository-app/rate-repository-app/src/components/RepositoryItem.jsx",
+		"/home/yash/rate-repository-app/rate-repository-app/src/components/MyText.jsx",
+		"/home/yash/rate-repository-app/rate-repository-app/src/components/theme.js",
 		"/home/yash/groundworks/fullstackopen/groundworkMobile/App.js",
+		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/App.js",
 		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/package.json",
 		"/home/yash/uohFSOpart10/rate-repository-app/rate-repository-app/.eslintrc.json",
 		"/home/yash/groundworks/fullstackopen/rate-repository-app/App.js",
@@ -1264,11 +859,16 @@
 		"/home/yash/RecyclersJunkyard/showcased/oldOne/theClient/src/rest/projects/browserDBApp/DexieIndexedDBapp.tsx",
 		"/home/yash/RecyclersJunkyard/showcased/oldOne/theClient/src/pages/campaign/CampaignList.tsx",
 		"/home/yash/RecyclersJunkyard/showcased/oldOne/theClient/src/pages/campaign/LeadFilterMenu.tsx",
-		"/home/yash/RecyclersJunkyard/showcased/oldOne/theClient/src/utils/Charts/Linechart.tsx"
+		"/home/yash/RecyclersJunkyard/showcased/oldOne/theClient/src/utils/Charts/Linechart.tsx",
+		"/home/yash/RecyclersJunkyard/showcased/oldOne/theClient/src/utils/Charts/Apexchart.tsx",
+		"/home/yash/RecyclersJunkyard/showcased/oldOne/theClient/src/pages/campaign/CampaignDashboard.tsx",
+		"/home/yash/RecyclersJunkyard/showcased/latest/src/assets/metronic_sass/style.scss",
+		"/home/yash/RecyclersJunkyard/showcased/latest/src/assets/metronic_sass/components/components.scss",
+		"/home/yash/referencewspc/testEnvs/customized/JustMetronic/metronic02/src/assets/dashboardSpecificStyles/style.css"
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -1302,32 +902,15 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-			"callback",
-			"'red'",
-			"username",
-			"mass",
-			"BodyMassIndexCalculator",
-			"onSubmit",
-			"height",
-			"BodyMassIndexForm",
-			"Repositories",
-			"div",
-			"columnGap",
-			"flex",
-			"textWhiteHeavy",
-			"thumbnailView",
-			"avatarStyle",
-			"listingStyle",
-			"repositories",
-			"MyText",
-			"color:",
-			"color",
-			"bgc",
-			"AppBarTab",
-			"styles",
-			"div",
-			"Text",
-			"statusBarHeight",
+			"buttonLikeLabel",
+			"smallImage",
+			"spreadStyleBody",
+			"spreadStyle",
+			"itemObj.stargazersCount",
+			"theme.",
+			"color === 'textLight' && styles.colorTextBlack,",
+			"avatarBlock",
+			"justifyContents",
 			": ",
 			"Text",
 			"styles",
@@ -1429,7 +1012,24 @@
 			"publishToSubscribers",
 			"pubsub",
 			"BOOK_ADDED",
-			"/dist/use/ws"
+			"/dist/use/ws",
+			"useServer",
+			"server",
+			"makeExecutableSchema",
+			"ApolloServer",
+			"ApolloServerPluginDrainHttpServer",
+			"uuidv4",
+			"http",
+			"context",
+			"expressMiddleware",
+			"typeDefs",
+			"uuidv4",
+			"jwt",
+			"typeDefs",
+			"booksByGenre",
+			"result",
+			"setToken",
+			"token!==''"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1437,6 +1037,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"spreadStyleBody",
 			"test",
 			"Blog",
 			"blog",
@@ -1450,7 +1051,7 @@
 		"show_context": false,
 		"use_buffer2": false,
 		"use_gitignore": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
@@ -1458,565 +1059,12 @@
 		{
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/components/RepositoryList.jsx",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2410,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1848,
-								1848
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										1868,
-										1869
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"",
-										"region.greenish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										1825,
-										1826
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										1868,
-										1869
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"",
-										"region.greenish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										1825,
-										1826
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"syntax": "Packages/JSX/JSX.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": true,
-								"indentSize": 2,
-								"tabSize": 2
-							},
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 937.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/components/Main.jsx",
-					"selected": true,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 785,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								534,
-								534
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										545,
-										546
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"",
-										"region.purplish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										544,
-										545
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										758,
-										759
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"",
-										"region.yellowish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										466,
-										467
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"syntax": "Packages/JSX/JSX.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": true,
-								"indentSize": 2,
-								"tabSize": 2
-							},
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 60.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 734,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								477,
-								611
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										700,
-										701
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"",
-										"region.purplish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										82,
-										83
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"syntax": "Packages/JavaScript/JSX.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"stack_multiselect": false,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 38.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -2073,7 +1121,7 @@
 	"project": "reactNativeFSODev.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -2093,7 +1141,7 @@
 		[
 			[
 				"",
-				"~/RecyclersJunkyard/showcased/latest/src/latestShowCased.sublime-project"
+				"~/uohFSOpart9/patientorGF.sublime-project"
 			]
 		],
 		"width": 540.0
@@ -2115,7 +1163,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 265.0,
+	"side_bar_width": 251.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

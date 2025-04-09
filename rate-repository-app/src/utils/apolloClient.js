@@ -2,10 +2,10 @@ import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import Constants from 'expo-constants';
 import { setContext } from '@apollo/client/link/context';
 
-const createApolloClient = (authStorage) => {
+const createApolloClient = authStorage => {
   const httpLink = createHttpLink({
     uri: Constants.expoConfig.extra.apolloUri,
-  })
+  });
 
   const authLink = setContext(async (_, { headers }) => {
     try {

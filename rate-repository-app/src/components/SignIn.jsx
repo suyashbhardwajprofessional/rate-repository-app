@@ -2,7 +2,7 @@ import { StyleSheet, Text, TextInput, Pressable, View } from 'react-native';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import theme from './theme';
-import useSignIn from '../hooks/useSignIn'
+import useSignIn from '../hooks/useSignIn';
 
 const initialValues = {
   username: '',
@@ -10,39 +10,32 @@ const initialValues = {
 };
 
 const validationSchema = yup.object().shape({
-    username: yup
-      .string()
-      .min(3, 'At least a 3 letter username is expected')
-      .required('Username is required'),
-    password: yup
-      .string()
-      .min(1, 'cannot set a black password')
-      .required('Password is required'),
-  });
+  username: yup.string().min(3, 'At least a 3 letter username is expected').required('Username is required'),
+  password: yup.string().min(1, 'cannot set a black password').required('Password is required'),
+});
 
 const SignIn = ({ onSubmit }) => {
-  
-  let hasError=false;
+  let hasError = false;
   const formStyle = StyleSheet.create({
-    feederField:{
-      borderWidth:1,
-      borderStyle:'solid',
+    feederField: {
+      borderWidth: 1,
+      borderStyle: 'solid',
       borderColor: hasError ? '#d73a4a' : 'grey',
-      padding:10,
-      margin:5,
-      height:40,
-      borderRadius:4,
-      color:'grey'
-    }
-  })
+      padding: 10,
+      margin: 5,
+      height: 40,
+      borderRadius: 4,
+      color: 'grey',
+    },
+  });
 
   const buttonStyle = {
     ...formStyle.feederField,
-    backgroundColor:theme.colors.fillPrimary,
-    flex:0,
-    flexDirection:'row',
-    justifyContent:'center'
-  }
+    backgroundColor: theme.colors.fillPrimary,
+    flex: 0,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  };
 
   const formik = useFormik({
     initialValues,
@@ -51,7 +44,7 @@ const SignIn = ({ onSubmit }) => {
   });
 
   return (
-    <View style={{backgroundColor:theme.colors.fillVanilla}}>
+    <View style={{ backgroundColor: theme.colors.fillVanilla }}>
       <TextInput
         style={formStyle.feederField}
         placeholder="Username"
@@ -86,16 +79,14 @@ const SignIn = ({ onSubmit }) => {
 
 const Login = () => {
   const [signIn, result] = useSignIn();
-  const onSubmit = async (values) => {
+  const onSubmit = async values => {
     const { username, password } = values;
 
     try {
-      const { data } = await signIn({ username, password });
-      console.log('received', data);
+      await signIn({ username, password });
     } catch (e) {
       console.log(e);
     }
-
   };
 
   return <SignIn onSubmit={onSubmit} />;

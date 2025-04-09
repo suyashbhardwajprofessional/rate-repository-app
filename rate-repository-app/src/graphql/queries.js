@@ -6,6 +6,7 @@ export const GET_REPOSITORIES = gql`
       totalCount
       edges {
         node {
+          id
           name
           language
           fullName
@@ -31,4 +32,4 @@ export const ME = gql`
       reviewCount
     }
   }
-`
+`;
