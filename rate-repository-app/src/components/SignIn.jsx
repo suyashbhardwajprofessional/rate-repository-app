@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import theme from './theme';
 import useSignIn from '../hooks/useSignIn';
+import { useState } from 'react';
 
 const initialValues = {
   username: '',
@@ -14,7 +15,7 @@ const validationSchema = yup.object().shape({
   password: yup.string().min(1, 'cannot set a black password').required('Password is required'),
 });
 
-const SignIn = ({ onSubmit }) => {
+const SignIn = ({ onSubmit, failureError }) => {
   let hasError = false;
   const formStyle = StyleSheet.create({
     feederField: {
@@ -43,7 +44,7 @@ const SignIn = ({ onSubmit }) => {
     onSubmit,
   });
 
-  return (
+  return (<>
     <View style={{ backgroundColor: theme.colors.fillVanilla }}>
       <TextInput
         style={formStyle.feederField}
@@ -74,11 +75,98 @@ const SignIn = ({ onSubmit }) => {
         <Text>LogIn</Text>
       </Pressable>
     </View>
-  );
+    {failureError && (
+      <Text style={failureError.message? styles.titleText : styles.baseText}>
+        {failureError.message? failureError.message : JSON.stringify(failureError)}
+      </Text>
+    )}
+  </>);
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  baseText: {
+    fontFamily: 'Cochin',
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+});
+
+const downloadedstyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    paddingHorizontal: 20,
+  },
+  logo: {
+    height: 200,
+    width: 200,
+    resizeMode: 'contain',
+    marginBottom: 20,
+  },
+  title: {
+    fontSize: 32,
+    marginBottom: 40,
+    fontWeight: 'bold',
+    color: 'black',
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '100%',
+    height: 50,
+    backgroundColor: '#f1f1f1',
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    marginBottom: 20,
+  },
+  icon: {
+    marginRight: 10,
+  },
+  input: {
+    flex: 1,
+    height: '100%',
+  },
+  forgotPassword: {
+    alignSelf: 'flex-end',
+    marginBottom: 20,
+    color: '#000',
+  },
+  button: {
+    width: '100%',
+    height: 50,
+    backgroundColor: '#1E90FF',
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+  },
+  signUp: {
+    color: '#000',
+  },
+  signUpLink: {
+    color: '#1E90FF',
+  },
+  errorText: {
+    color: 'red',
+    alignSelf: 'flex-start',
+    marginBottom: 10,
+  },
+});
 
 const Login = () => {
   const [signIn, result] = useSignIn();
+  const [failureError, setFailureError] = useState('');
   const onSubmit = async values => {
     const { username, password } = values;
 
@@ -86,10 +174,11 @@ const Login = () => {
       await signIn({ username, password });
     } catch (e) {
       console.log(e);
+      setFailureError(e);
     }
   };
 
-  return <SignIn onSubmit={onSubmit} />;
+  return <SignIn onSubmit={onSubmit} failureError={failureError}/>;
 };
 
 export default Login;

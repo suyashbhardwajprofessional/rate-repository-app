@@ -18,11 +18,13 @@ const Main = () => {
   return (
     <View style={styles.container}>
       <AppBar/>
-      <Routes>
-        <Route path='/repositories' element={<RepositoryList />} />
-        <Route path='/signin' element={<SignIn />} />
-        <Route path='*' element={<Navigate to='/signin' replace />} />
-      </Routes>
+      <View style={{flex: 1, marginTop: 1}}>
+        <Routes>
+          <Route path='/repositories' element={<RepositoryList />} />
+          <Route path='/signin' element={<SignIn />} />
+          <Route path='*' element={<Navigate to='/signin' replace />} />
+        </Routes>
+      </View>
     </View>
   );
 };
