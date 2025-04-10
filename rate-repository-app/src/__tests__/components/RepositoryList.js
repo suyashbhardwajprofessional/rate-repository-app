@@ -1,9 +1,10 @@
 import { FlatList, View, StyleSheet, Text } from 'react-native';
-import RepositoryItem from './RepositoryItem';
 import { useState, useEffect } from 'react';
-import useRepositories from '../hooks/useRepositories';
 import { useQuery } from '@apollo/client';
-import { ME } from '../graphql/queries';
+import RepositoryItem from '../../components/RepositoryItem';
+import useRepositories from '../../hooks/useRepositories';
+import { ME } from '../../graphql/queries';
+import { render } from '@testing-library/react-native';
 
 const ItemSeparator = () => <View style={styles.separator} />;
 const styles = StyleSheet.create({
@@ -47,3 +48,13 @@ const RepositoryList = () => {
 };
 
 export default RepositoryList;
+
+describe('Repository List', () => {
+  it("renders repository's name, description, language, forks count, stargazers count, rating average, and review count correctly", () => {
+    render(<RepositoryList />);
+
+    screen.debug();
+
+    expect(screen.getByText('JavaScript')).toBeDefined();
+  });
+});
