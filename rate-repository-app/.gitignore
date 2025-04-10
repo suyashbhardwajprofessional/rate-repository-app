@@ -31,9 +31,35 @@ yarn-error.*
 # local env files
 .env*.local
 
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
 # typescript
 *.tsbuildinfo
 
 # not needed to push
+
+*.sublime*
 *.sublime-project
 *.sublime-workspace
+
+### SublimeText ###
+# Cache files for Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# Workspace files are user-specific
+*.sublime-workspace
+
+# Project files should be checked into the repository, unless a significant
+# proportion of contributors will probably not be using Sublime Text
+ *.sublime-project
+
+# Sublime-github package stores a github token in this file
+# https://packagecontrol.io/packages/sublime-github
+GitHub.sublime-settings
