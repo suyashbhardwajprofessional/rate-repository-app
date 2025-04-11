@@ -62,7 +62,7 @@ const RepositoryItem = ({ itemObj, singleRepositoryViewFlag }) => {
 	});
 
 	return (
-		<View style={styles.blockStyle} testID={"repositoryItem"}>
+		<View style={styles.blockStyle}>
 			<View style={styles.spreadStyleBody}>
 				<View>
 					<Image style={styles.thumbnailImage} source={{ uri: itemObj.ownerAvatarUrl }} />
@@ -107,20 +107,22 @@ const RepositoryItem = ({ itemObj, singleRepositoryViewFlag }) => {
 					<MyText color="textSecondary">Ratings</MyText>
 				</View>
 			</View>
-			{singleRepositoryViewFlag && <Pressable onPress = {()=> Linking.openURL(itemObj.url)}>
-		        <View style={
-		          {
-		            justifyContent:'center',
-		            alignItems:'center',
-		            backgroundColor:'skyblue',
-		            margin:4,
-		            borderRadius:3,
-		            padding:6
-		            }}>
-		          <Text>Open in GitHub</Text>
-		        </View>
-		    </Pressable>
-			}
+			{singleRepositoryViewFlag && (
+				<Pressable onPress={() => Linking.openURL(itemObj.url)}>
+					<View
+						style={{
+							justifyContent: 'center',
+							alignItems: 'center',
+							backgroundColor: 'skyblue',
+							margin: 4,
+							borderRadius: 3,
+							padding: 6,
+						}}
+					>
+						<Text>Open in GitHub</Text>
+					</View>
+				</Pressable>
+			)}
 		</View>
 	);
 };

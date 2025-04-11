@@ -33,7 +33,6 @@ const SignIn = ({ onSubmit, failureError }) => {
   const buttonStyle = {
     ...formStyle.feederField,
     backgroundColor: theme.colors.fillPrimary,
-    flex: 0,
     flexDirection: 'row',
     justifyContent: 'center',
   };
@@ -44,43 +43,45 @@ const SignIn = ({ onSubmit, failureError }) => {
     onSubmit,
   });
 
-  return (<>
-    <View style={{ backgroundColor: theme.colors.fillVanilla }}>
-      <TextInput
-        style={formStyle.feederField}
-        placeholder="Username"
-        value={formik.values.username}
-        onChangeText={formik.handleChange('username')}
-        error={hasError}
-      />
+  return (
+    <>
+      <View style={{ backgroundColor: theme.colors.fillVanilla }}>
+        <TextInput
+          style={formStyle.feederField}
+          placeholder="Username"
+          value={formik.values.username}
+          onChangeText={formik.handleChange('username')}
+          error={hasError}
+        />
 
-      {formik.touched.username && formik.errors.username && (
-        <Text style={{ color: '#d73a4a', paddingHorizontal: 10 }}>{formik.errors.username}</Text>
+        {formik.touched.username && formik.errors.username && (
+          <Text style={{ color: '#d73a4a', paddingHorizontal: 10 }}>{formik.errors.username}</Text>
+        )}
+
+        <TextInput
+          style={formStyle.feederField}
+          placeholder="Password"
+          value={formik.values.password}
+          onChangeText={formik.handleChange('password')}
+          secureTextEntry
+          error={hasError}
+        />
+
+        {formik.touched.password && formik.errors.password && (
+          <Text style={{ color: '#d73a4a', paddingHorizontal: 10 }}>{formik.errors.password}</Text>
+        )}
+
+        <Pressable onPress={formik.handleSubmit} style={buttonStyle}>
+          <Text>LogIn</Text>
+        </Pressable>
+      </View>
+      {failureError && (
+        <Text style={failureError.message ? styles.titleText : styles.baseText}>
+          {failureError.message ? failureError.message : JSON.stringify(failureError)}
+        </Text>
       )}
-
-      <TextInput
-        style={formStyle.feederField}
-        placeholder="Password"
-        value={formik.values.password}
-        onChangeText={formik.handleChange('password')}
-        secureTextEntry
-        error={hasError}
-      />
-
-      {formik.touched.password && formik.errors.password && (
-        <Text style={{ color: '#d73a4a', paddingHorizontal: 10 }}>{formik.errors.password}</Text>
-      )}
-
-      <Pressable onPress={formik.handleSubmit} style={buttonStyle}>
-        <Text>LogIn</Text>
-      </Pressable>
-    </View>
-    {failureError && (
-      <Text style={failureError.message? styles.titleText : styles.baseText}>
-        {failureError.message? failureError.message : JSON.stringify(failureError)}
-      </Text>
-    )}
-  </>);
+    </>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -178,7 +179,7 @@ const Login = () => {
     }
   };
 
-  return <SignIn onSubmit={onSubmit} failureError={failureError}/>;
+  return <SignIn onSubmit={onSubmit} failureError={failureError} />;
 };
 
 export default Login;

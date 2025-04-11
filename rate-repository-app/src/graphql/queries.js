@@ -54,3 +54,36 @@ export const GET_REPOSITORY = gql`
     }
   }
 `;
+
+export const GET_REPOSITORY_WITH_REVIEWS = gql`
+  query ($repositoryId: ID!) {
+    repository(id: $repositoryId) {
+      id
+      fullName
+      url
+      name
+      language
+      forksCount
+      description
+      openIssuesCount
+      ownerAvatarUrl
+      ratingAverage
+      reviewCount
+      stargazersCount
+      reviews {
+        edges {
+          node {
+            id
+            text
+            rating
+            createdAt
+            user {
+              id
+              username
+            }
+          }
+        }
+      }
+    }
+  }
+`;
