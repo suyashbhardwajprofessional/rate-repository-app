@@ -4,7 +4,9 @@ import { useQuery } from '@apollo/client';
 import RepositoryItem from '../../components/RepositoryItem';
 import useRepositories from '../../hooks/useRepositories';
 import { ME } from '../../graphql/queries';
-import { render } from '@testing-library/react-native';
+
+import { render, screen, within } from '@testing-library/react-native';
+import { ErrorBoundary } from "react-error-boundary"
 
 const ItemSeparator = () => <View style={styles.separator} />;
 const styles = StyleSheet.create({
@@ -14,14 +16,15 @@ const styles = StyleSheet.create({
 });
 
 const RepositoryListContainer = ({ repositories }) => {
-  const { data, error, loading } = useQuery(ME, { fetchPolicy: 'cache-and-network' });
-  const [loginStatus, setLoginStatus] = useState(false);
+  /*const { data, error, loading } = useQuery(ME, { fetchPolicy: 'cache-and-network' });
+  const [loginStatus, setLoginStatus] = useState(false);*/
+  const [loginStatus, setLoginStatus] = useState(true);
   // Get the nodes from the edges array
   const repositoryNodes = repositories ? repositories.edges.map(edge => edge.node) : [];
 
-  useEffect(() => {
+  /*useEffect(() => {
     data && data.me ? setLoginStatus(true) : setLoginStatus(false);
-  }, [data]);
+  }, [data]);*/
 
   return (
     <>
@@ -47,14 +50,80 @@ const RepositoryList = () => {
   return <RepositoryListContainer repositories={repositories} />;
 };
 
-export default RepositoryList;
+describe('RepositoryList', () => {
+  describe('RepositoryListContainer', () => {
+    it('renders repository information correctly', () => {
+      const repositories = {
+        totalCount: 8,
+        pageInfo: {
+          hasNextPage: true,
+          endCursor:
+            'WyJhc3luYy1saWJyYXJ5LnJlYWN0LWFzeW5jIiwxNTg4NjU2NzUwMDc2XQ==',
+          startCursor: 'WyJqYXJlZHBhbG1lci5mb3JtaWsiLDE1ODg2NjAzNTAwNzZd',
+        },
+        edges: [
+          {
+            node: {
+              id: 'jaredpalmer.formik',
+              fullName: 'jaredpalmer/formik',
+              description: 'Build forms in React, without the tears',
+              language: 'TypeScript',
+              forksCount: 1619,
+              stargazersCount: 21856,
+              ratingAverage: 88,
+              reviewCount: 3,
+              ownerAvatarUrl:
+                'https://avatars2.githubusercontent.com/u/4060187?v=4',
+            },
+            cursor: 'WyJqYXJlZHBhbG1lci5mb3JtaWsiLDE1ODg2NjAzNTAwNzZd',
+          },
+          {
+            node: {
+              id: 'async-library.react-async',
+              fullName: 'async-library/react-async',
+              description: 'Flexible promise-based React data loader',
+              language: 'JavaScript',
+              forksCount: 69,
+              stargazersCount: 1760,
+              ratingAverage: 72,
+              reviewCount: 3,
+              ownerAvatarUrl:
+                'https://avatars1.githubusercontent.com/u/54310907?v=4',
+            },
+            cursor:
+              'WyJhc3luYy1saWJyYXJ5LnJlYWN0LWFzeW5jIiwxNTg4NjU2NzUwMDc2XQ==',
+          },
+        ],
+      };
 
-describe('Repository List', () => {
-  it("renders repository's name, description, language, forks count, stargazers count, rating average, and review count correctly", () => {
-    render(<RepositoryList />);
+      // Add your test code here
+      const { queryByTestId } = render(
+        <ErrorBoundary fallback={<p>Something went wrong</p>}>
+          <RepositoryListContainer repositories={repositories}/>
+        </ErrorBoundary>
+        );
 
-    screen.debug();
+      // screen.debug();
+      const repositoryItems = screen.getAllByTestId('repositoryItem');
+      const [firstRepositoryItem, secondRepositoryItem] = repositoryItems;
 
-    expect(screen.getByText('JavaScript')).toBeDefined();
+      // expect something from the first and the second repository item
+      // expect(firstRepositoryItem).toHaveTextContent('jaredpalmer/formik', { exact: false})
+      expect(within(firstRepositoryItem).getByText('jaredpalmer/formik')).toBeTruthy()
+      expect(within(firstRepositoryItem).getByText('Build forms in React, without the tears')).toBeTruthy()
+      expect(within(firstRepositoryItem).getByText('TypeScript')).toBeTruthy()
+      expect(within(firstRepositoryItem).getByText('1.62k')).toBeTruthy()
+      expect(within(firstRepositoryItem).getByText('21.9k')).toBeTruthy()
+      expect(within(firstRepositoryItem).getByText('88')).toBeTruthy()
+      expect(within(firstRepositoryItem).getByText('3')).toBeTruthy()
+
+      expect(within(secondRepositoryItem).getByText('async-library/react-async')).toBeTruthy()
+      expect(within(secondRepositoryItem).getByText('Flexible promise-based React data loader')).toBeTruthy()
+      expect(within(secondRepositoryItem).getByText('JavaScript')).toBeTruthy()
+      expect(within(secondRepositoryItem).getByText('69')).toBeTruthy()
+      expect(within(secondRepositoryItem).getByText('1.76k')).toBeTruthy()
+      expect(within(secondRepositoryItem).getByText('72')).toBeTruthy()
+      expect(within(secondRepositoryItem).getByText('3')).toBeTruthy()
+    });
   });
 });
