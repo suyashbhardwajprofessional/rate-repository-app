@@ -1,9 +1,10 @@
-import { FlatList, View, StyleSheet, Text } from 'react-native';
+import { FlatList, Pressable, View, StyleSheet, Text } from 'react-native';
 import RepositoryItem from './RepositoryItem';
 import { useState, useEffect } from 'react';
 import useRepositories from '../hooks/useRepositories';
 import { useQuery } from '@apollo/client';
 import { ME } from '../graphql/queries';
+import { useNavigate } from 'react-router-native';
 
 const ItemSeparator = () => <View style={styles.separator} />;
 const styles = StyleSheet.create({
@@ -17,6 +18,7 @@ const RepositoryListContainer = ({ repositories }) => {
   const [loginStatus, setLoginStatus] = useState(false);
   // Get the nodes from the edges array
   const repositoryNodes = repositories ? repositories.edges.map(edge => edge.node) : [];
+  const navigate = useNavigate();
 
   useEffect(() => {
     data && data.me ? setLoginStatus(true) : setLoginStatus(false);
@@ -28,7 +30,11 @@ const RepositoryListContainer = ({ repositories }) => {
         <FlatList
           data={repositoryNodes}
           ItemSeparatorComponent={ItemSeparator}
-          renderItem={({ item }) => <RepositoryItem itemObj={item} key={item.id} />}
+          renderItem={({ item }) => 
+            <Pressable onPress={()=>navigate(`/repositories/${item.id}`)}>
+              <RepositoryItem itemObj={item} key={item.id} singleRepositoryViewFlag={false}/>
+            </Pressable>
+          }
           keyExtractor={item => item.id}
         />
       ) : (

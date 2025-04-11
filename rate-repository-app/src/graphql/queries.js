@@ -7,6 +7,7 @@ export const GET_REPOSITORIES = gql`
       edges {
         node {
           id
+          url
           name
           language
           fullName
@@ -30,6 +31,26 @@ export const ME = gql`
       username
       createdAt
       reviewCount
+    }
+  }
+`;
+
+
+export const GET_REPOSITORY = gql`
+  query Repositories($repositoryId: ID!) {
+    repository(id: $repositoryId) {
+      id
+      url
+      name
+      language
+      fullName
+      forksCount
+      description
+      openIssuesCount
+      ownerAvatarUrl
+      ratingAverage
+      reviewCount
+      stargazersCount
     }
   }
 `;

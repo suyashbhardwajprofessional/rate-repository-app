@@ -1,8 +1,9 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import theme from './theme';
 import MyText from './MyText';
+import * as Linking from 'expo-linking';
 
-const RepositoryItem = ({ itemObj }) => {
+const RepositoryItem = ({ itemObj, singleRepositoryViewFlag }) => {
 	const styles = StyleSheet.create({
 		blockStyle: {
 			padding: 10,
@@ -11,13 +12,11 @@ const RepositoryItem = ({ itemObj }) => {
 		},
 
 		spreadStyleBody: {
-			flex: 1,
 			flexDirection: 'row',
 			columnGap: 10,
 			alignItems: 'flex-start',
 		},
 		spreadStyleFooter: {
-			flex: 1,
 			flexDirection: 'row',
 			columnGap: 5,
 			marginTop: 5,
@@ -48,7 +47,6 @@ const RepositoryItem = ({ itemObj }) => {
 		},
 
 		labelsContainer: {
-			flex: 1,
 			flexDirection: 'row',
 			justifyContent: 'flex-start',
 		},
@@ -69,7 +67,7 @@ const RepositoryItem = ({ itemObj }) => {
 				<View>
 					<Image style={styles.thumbnailImage} source={{ uri: itemObj.ownerAvatarUrl }} />
 				</View>
-				<View style={{ flex: 1 }}>
+				<View>
 					<Text style={styles.textBlackHeavy}>{itemObj.fullName} </Text>
 					<Text style={styles.textGreyNormal}>{itemObj.description} </Text>
 					<View style={styles.labelsContainer}>
@@ -109,6 +107,20 @@ const RepositoryItem = ({ itemObj }) => {
 					<MyText color="textSecondary">Ratings</MyText>
 				</View>
 			</View>
+			{singleRepositoryViewFlag && <Pressable onPress = {()=> Linking.openURL(itemObj.url)}>
+		        <View style={
+		          {
+		            justifyContent:'center',
+		            alignItems:'center',
+		            backgroundColor:'skyblue',
+		            margin:4,
+		            borderRadius:3,
+		            padding:6
+		            }}>
+		          <Text>Open in GitHub</Text>
+		        </View>
+		    </Pressable>
+			}
 		</View>
 	);
 };
