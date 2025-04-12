@@ -17,6 +17,7 @@ const AppBar = () => {
     <AppBarContainer>
       <ScrollView horizontal={true}>
         <AppBarTab titled={loginStatusTitle} leadTo="signin" />
+        {loginStatusTitle==='SignOut' && <AppBarTab titled="Create a review" leadTo="newreview" />}
         <AppBarTab titled="Repositories" leadTo="repositories" />
       </ScrollView>
     </AppBarContainer>
