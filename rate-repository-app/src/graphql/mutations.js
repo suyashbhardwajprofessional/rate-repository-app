@@ -16,6 +16,7 @@ export const CREATE_REVIEW = gql`
       createdAt
       repository {
         name
+        id
       }
       text
     }

@@ -7,21 +7,20 @@ import { useState } from 'react';
 
 const initialValues = {
   username: '',
-  repositoryName:'',
-  ratings:0,
-  reviewtext:''
+  repositoryName: '',
+  ratings: 0,
+  reviewText: '',
 };
 
 const validationSchema = yup.object().shape({
-  username: yup.string().min(3, 'At least a 3 letter username is expected').required('Username is required'),
+  username: yup.string().min(3, 'At least a 3 letter username is expected').required('Repository owner is required'),
   repositoryName: yup.string().min(3, 'At least a 3 letter username is expected').required('Repository name is required'),
   ratings: yup
     .number()
     .min(0, 'anything between 1 & 100 is valid')
     .max(100, 'anything between 1 & 100 is valid')
     .required('Rating is required'),
-  reviewtext: yup.string().min(3, 'At least a 3 letter review is expected'),
-  
+  reviewText: yup.string().min(3, 'At least a 3 letter review is expected'),
 });
 
 const CreateNewReview = ({ onSubmit, failureError }) => {
@@ -57,7 +56,7 @@ const CreateNewReview = ({ onSubmit, failureError }) => {
       <View style={{ backgroundColor: theme.colors.fillVanilla }}>
         <TextInput
           style={formStyle.feederField}
-          placeholder="Username"
+          placeholder="Repository owner name"
           value={formik.values.username}
           onChangeText={formik.handleChange('username')}
           error={hasError}
@@ -69,7 +68,7 @@ const CreateNewReview = ({ onSubmit, failureError }) => {
 
         <TextInput
           style={formStyle.feederField}
-          placeholder="Name of repository"
+          placeholder="Repository name"
           value={formik.values.repositoryName}
           onChangeText={formik.handleChange('repositoryName')}
           error={hasError}
@@ -81,7 +80,7 @@ const CreateNewReview = ({ onSubmit, failureError }) => {
 
         <TextInput
           style={formStyle.feederField}
-          placeholder="Rating"
+          placeholder="Rating between 0 and 100"
           value={formik.values.ratings}
           onChangeText={formik.handleChange('ratings')}
           error={hasError}
@@ -93,9 +92,10 @@ const CreateNewReview = ({ onSubmit, failureError }) => {
 
         <TextInput
           style={formStyle.feederField}
-          placeholder="Review text here.."
+          placeholder="Review"
           value={formik.values.reviewText}
           onChangeText={formik.handleChange('reviewText')}
+          multiline={true}
           error={hasError}
         />
 
@@ -201,11 +201,10 @@ const NewReview = () => {
   const [createNewReview, result] = useNewReview();
   const [failureError, setFailureError] = useState('');
   const onSubmit = async values => {
-    const { username, repositoryName, ratings, reviewtext } = values;
-    const integerRatings = Number(ratings)
-
+    const { username, repositoryName, ratings, reviewText } = values;
+    const integerRatings = Number(ratings);
     try {
-      await createNewReview({ username, repositoryName, ratings: integerRatings, reviewtext });
+      await createNewReview({ username, repositoryName, ratings: integerRatings, reviewText });
     } catch (e) {
       console.log(e);
       setFailureError(e);
