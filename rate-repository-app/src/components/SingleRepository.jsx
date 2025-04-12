@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import RepositoryItem from './RepositoryItem';
 import theme from './theme';
+import { format } from 'date-fns';
 
 const styles = StyleSheet.create({
 	blockStyle: {
@@ -92,17 +93,16 @@ const RepositoryInfo = ({ repository }) => {
 
 const ReviewItem = ({ review }) => {
 	// Single review item
-	const theWidth = 20;
-	const theHeight = 30;
+	const theWidth = 50;
+	const theHeight = 50;
 	return (
 		<View style={styles.blockStyle}>
 			<View style={styles.spreadStyleBody}>
-				{/*<View style={{ width: theWidth, height: theHeight }}>*/}
-				<View>
+				<View style={{flex:2, justifyContent: 'center', alignItems:'center', width:theWidth, height:theHeight}}>
 					<Text
 						style={{
-							padding: 4,
-							borderRadius: 10,
+							padding:15,	
+							borderRadius: theWidth/2,
 							borderColor: 'teal',
 							borderStyle: 'solid',
 							borderWidth: 2,
@@ -111,11 +111,12 @@ const ReviewItem = ({ review }) => {
 						{review.rating}
 					</Text>
 				</View>
-				<View>
-					<Text style={styles.textBlackHeavy}>{review.user.username} </Text>
-					<Text style={styles.textGreyNormal}>{review.createdAt} </Text>
-					<Text style={styles.textGreyNormal}>{review.text} </Text>
+				<View style={{flex: 8}}>
+					<Text style={styles.textBlackHeavy}>{review.user.username}</Text>
+					<Text style={styles.textGreyNormal}>{format(review.createdAt, 'MM.dd.yyyy')} </Text>
+					<View><Text style={styles.textGreyNormal}>{review.text} </Text></View>
 				</View>
+				<View style={{flex:0, justifyContent: 'center'}}></View>
 			</View>
 		</View>
 	);
