@@ -67,7 +67,7 @@ const RepositoryItem = ({ itemObj, singleRepositoryViewFlag }) => {
 				<View>
 					<Image style={styles.thumbnailImage} source={{ uri: itemObj.ownerAvatarUrl }} />
 				</View>
-				<View>
+				<View style={{ flex: 1 }}>
 					<Text style={styles.textBlackHeavy}>{itemObj.fullName} </Text>
 					<Text style={styles.textGreyNormal}>{itemObj.description} </Text>
 					<View style={styles.labelsContainer}>
