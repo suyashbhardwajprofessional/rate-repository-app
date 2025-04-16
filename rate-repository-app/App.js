@@ -6,9 +6,20 @@ import Constants from 'expo-constants';
 import { loadErrorMessages, loadDevMessages } from '@apollo/client/dev';
 import AuthStorage from './src/utils/authStorage';
 import AuthStorageContext from './src/contexts/AuthStorageContext';
+import { MD3LightTheme as DefaultTheme, PaperProvider } from 'react-native-paper';
 
 const authorizationOne = new AuthStorage('authorizationOne');
 const apolloClient = createApolloClient(authorizationOne);
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'tomato',
+    secondary: 'yellow',
+  },
+};
+
 const App = () => {
   loadDevMessages();
   loadErrorMessages();
@@ -19,7 +30,9 @@ const App = () => {
       <NativeRouter>
         <ApolloProvider client={apolloClient}>
           <AuthStorageContext.Provider value={authorizationOne}>
-            <Main />
+            <PaperProvider theme={theme}>
+              <Main />
+            </PaperProvider>
           </AuthStorageContext.Provider>
         </ApolloProvider>
       </NativeRouter>

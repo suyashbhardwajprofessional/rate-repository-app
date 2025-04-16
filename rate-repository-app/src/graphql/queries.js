@@ -1,17 +1,17 @@
 import { gql } from '@apollo/client';
 
 export const GET_REPOSITORIES = gql`
-  query Repositories {
-    repositories {
+  query Repositories($orderBy: AllRepositoriesOrderBy, $orderDirection: OrderDirection) {
+    repositories(orderBy: $orderBy, orderDirection: $orderDirection) {
       totalCount
       edges {
         node {
           id
-          url
           name
           language
-          fullName
+          url
           forksCount
+          fullName
           description
           openIssuesCount
           ownerAvatarUrl
