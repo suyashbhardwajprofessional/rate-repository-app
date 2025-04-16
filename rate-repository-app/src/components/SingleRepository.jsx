@@ -91,18 +91,18 @@ const RepositoryInfo = ({ repository }) => {
 	return <View>{repository && <RepositoryItem itemObj={repository} singleRepositoryViewFlag={true} />}</View>;
 };
 
-const ReviewItem = ({ review }) => {
+export const ReviewItem = ({ review }) => {
 	// Single review item
 	const theWidth = 50;
 	const theHeight = 50;
 	return (
 		<View style={styles.blockStyle}>
 			<View style={styles.spreadStyleBody}>
-				<View style={{flex:2, justifyContent: 'center', alignItems:'center', width:theWidth, height:theHeight}}>
+				<View style={{ flex: 2, justifyContent: 'center', alignItems: 'center', width: theWidth, height: theHeight }}>
 					<Text
 						style={{
-							padding:15,	
-							borderRadius: theWidth/2,
+							padding: 15,
+							borderRadius: theWidth / 2,
 							borderColor: 'teal',
 							borderStyle: 'solid',
 							borderWidth: 2,
@@ -111,12 +111,14 @@ const ReviewItem = ({ review }) => {
 						{review.rating}
 					</Text>
 				</View>
-				<View style={{flex: 8}}>
+				<View style={{ flex: 8 }}>
 					<Text style={styles.textBlackHeavy}>{review.user.username}</Text>
 					<Text style={styles.textGreyNormal}>{format(review.createdAt, 'MM.dd.yyyy')} </Text>
-					<View><Text style={styles.textGreyNormal}>{review.text} </Text></View>
+					<View>
+						<Text style={styles.textGreyNormal}>{review.text} </Text>
+					</View>
 				</View>
-				<View style={{flex:0, justifyContent: 'center'}}></View>
+				<View style={{ flex: 0, justifyContent: 'center' }}></View>
 			</View>
 		</View>
 	);

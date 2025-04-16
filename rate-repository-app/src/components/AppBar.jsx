@@ -7,23 +7,23 @@ import { useQuery } from '@apollo/client';
 
 const AppBar = () => {
   const { data, error, loading } = useQuery(ME, { fetchPolicy: 'cache-and-network' });
-  const [loginStatusTitle, setLoginStatusTitle] = useState('LogIn')
+  const [loginStatusTitle, setLoginStatusTitle] = useState('LogIn');
 
-  useEffect(()=>{
-    data && data.me ? setLoginStatusTitle('SignOut') : setLoginStatusTitle('Sign in')
-  },[data])
+  useEffect(() => {
+    data && data.me ? setLoginStatusTitle('SignOut') : setLoginStatusTitle('Sign in');
+  }, [data]);
 
   return (
     <AppBarContainer>
       <ScrollView horizontal={true}>
         <AppBarTab titled="Repositories" leadTo="repositories" />
         <AppBarTab titled={loginStatusTitle} leadTo="signin" />
-        {loginStatusTitle==='SignOut' && <AppBarTab titled="Create a review" leadTo="newreview" />}
-        {loginStatusTitle!=='SignOut' && <AppBarTab titled="Sign up" leadTo="signup" />}
-        
+        {loginStatusTitle === 'SignOut' && <AppBarTab titled="Create a review" leadTo="newreview" />}
+        {loginStatusTitle === 'SignOut' && <AppBarTab titled="My reviews" leadTo="myreviews" />}
+        {loginStatusTitle !== 'SignOut' && <AppBarTab titled="Sign up" leadTo="signup" />}
       </ScrollView>
     </AppBarContainer>
-    );
+  );
 };
 
 export default AppBar;
