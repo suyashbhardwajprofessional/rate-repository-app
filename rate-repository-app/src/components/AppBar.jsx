@@ -10,15 +10,17 @@ const AppBar = () => {
   const [loginStatusTitle, setLoginStatusTitle] = useState('LogIn')
 
   useEffect(()=>{
-    data && data.me ? setLoginStatusTitle('SignOut') : setLoginStatusTitle('SignIn')
+    data && data.me ? setLoginStatusTitle('SignOut') : setLoginStatusTitle('Sign in')
   },[data])
 
   return (
     <AppBarContainer>
       <ScrollView horizontal={true}>
+        <AppBarTab titled="Repositories" leadTo="repositories" />
         <AppBarTab titled={loginStatusTitle} leadTo="signin" />
         {loginStatusTitle==='SignOut' && <AppBarTab titled="Create a review" leadTo="newreview" />}
-        <AppBarTab titled="Repositories" leadTo="repositories" />
+        {loginStatusTitle!=='SignOut' && <AppBarTab titled="Sign up" leadTo="signup" />}
+        
       </ScrollView>
     </AppBarContainer>
     );
