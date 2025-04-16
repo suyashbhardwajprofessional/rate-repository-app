@@ -1,11 +1,12 @@
 import { FlatList, Pressable, View, StyleSheet, Text } from 'react-native';
 import RepositoryItem from './RepositoryItem';
 import { useState, useEffect } from 'react';
+import { useDebounce } from 'use-debounce';
 import useRepositories from '../hooks/useRepositories';
 import { useQuery } from '@apollo/client';
 import { ME } from '../graphql/queries';
 import { useNavigate } from 'react-router-native';
-import { Button, Menu, Divider, PaperProvider } from 'react-native-paper';
+import { Button, Menu, Divider, PaperProvider, Searchbar } from 'react-native-paper';
 
 const ItemSeparator = () => <View style={styles.separator} />;
 const styles = StyleSheet.create({
@@ -14,8 +15,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const TopMenu = ({ setUserQuery }) => {
+const TopMenu = ({ userQuery, setUserQuery }) => {
   const [visible, setVisible] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [debouncedValue] = useDebounce(searchQuery, 500);
   const [theSelectedOne, setTheSelectedOne] = useState('latest repositories');
   const openMenu = () => setVisible(true);
   const closeMenu = () => setVisible(false);
@@ -49,15 +52,27 @@ const TopMenu = ({ setUserQuery }) => {
     }
   };
 
+  useEffect(() => {
+    setUserQuery({ ...userQuery, searchKey: debouncedValue });
+  }, [searchQuery]);
+
   return (
     <>
       <View
         style={{
           paddingTop: 5,
-          flexDirection: 'row',
+          flexDirection: 'column',
           justifyContent: 'flex-end',
+          alignItems: 'flex-end',
         }}
       >
+        <Searchbar
+          style={{ backgroundColor: 'white', paddingRight: 6, margin: 10, borderRadius: 4 }}
+          inputStyle={{ backgroundColor: 'white', marginRight: 4 }}
+          placeholder="Search"
+          onChangeText={setSearchQuery}
+          value={searchQuery}
+        />
         <Menu visible={visible} onDismiss={closeMenu} anchor={<Button onPress={openMenu}>{theSelectedOne}</Button>}>
           <Menu.Item onPress={() => handleMenuAction(1)} title="latest repositories" />
           <Menu.Item onPress={() => handleMenuAction(2)} title="highest rated repositories" />
@@ -69,7 +84,7 @@ const TopMenu = ({ setUserQuery }) => {
   );
 };
 
-const RepositoryListContainer = ({ repositories, setUserQuery }) => {
+const RepositoryListContainer = ({ repositories, userQuery, setUserQuery }) => {
   const { data, error, loading } = useQuery(ME, { fetchPolicy: 'cache-and-network' });
   const [loginStatus, setLoginStatus] = useState(false);
   // Get the nodes from the edges array
@@ -86,7 +101,7 @@ const RepositoryListContainer = ({ repositories, setUserQuery }) => {
         <FlatList
           data={repositoryNodes}
           ItemSeparatorComponent={ItemSeparator}
-          ListHeaderComponent={<TopMenu setUserQuery={setUserQuery} />}
+          ListHeaderComponent={<TopMenu userQuery={userQuery} setUserQuery={setUserQuery} />}
           renderItem={({ item }) => (
             <Pressable onPress={() => navigate(`/repositories/${item.id}`)}>
               <RepositoryItem itemObj={item} key={item.id} singleRepositoryViewFlag={false} />
@@ -104,10 +119,10 @@ const RepositoryListContainer = ({ repositories, setUserQuery }) => {
 };
 
 const RepositoryList = () => {
-  const [userQuery, setUserQuery] = useState({ theOrderPrinciple: 'CREATED_AT', theOrderDirection: 'DESC' });
-  const { repositories } = useRepositories(userQuery.theOrderPrinciple, userQuery.theOrderDirection);
+  const [userQuery, setUserQuery] = useState({ theOrderPrinciple: 'CREATED_AT', theOrderDirection: 'DESC', searchKey: '' });
+  const { repositories } = useRepositories(userQuery.theOrderPrinciple, userQuery.theOrderDirection, userQuery.searchKey);
 
-  return <RepositoryListContainer repositories={repositories} setUserQuery={setUserQuery} />;
+  return <RepositoryListContainer repositories={repositories} userQuery={userQuery} setUserQuery={setUserQuery} />;
 };
 
 export default RepositoryList;

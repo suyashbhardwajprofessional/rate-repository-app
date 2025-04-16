@@ -1,9 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const GET_REPOSITORIES = gql`
-  query Repositories($orderBy: AllRepositoriesOrderBy, $orderDirection: OrderDirection) {
-    repositories(orderBy: $orderBy, orderDirection: $orderDirection) {
-      totalCount
+  query Repositories($orderBy: AllRepositoriesOrderBy, $orderDirection: OrderDirection, $searchKeyword: String) {
+    repositories(orderBy: $orderBy, orderDirection: $orderDirection, searchKeyword: $searchKeyword) {
       edges {
         node {
           id
@@ -20,6 +19,7 @@ export const GET_REPOSITORIES = gql`
           stargazersCount
         }
       }
+      totalCount
     }
   }
 `;
@@ -34,7 +34,6 @@ export const ME = gql`
     }
   }
 `;
-
 
 export const GET_REPOSITORY = gql`
   query Repositories($repositoryId: ID!) {
