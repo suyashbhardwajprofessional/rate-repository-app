@@ -1,11 +1,13 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import { useParams } from 'react-router-native';
+import { Alert, FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useNavigate, useParams } from 'react-router-native';
 import { GET_REPOSITORY, GET_REPOSITORY_WITH_REVIEWS } from '../graphql/queries';
 import { useEffect, useState } from 'react';
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import RepositoryItem from './RepositoryItem';
 import theme from './theme';
 import { format } from 'date-fns';
+import MyText from './MyText';
+import { DELETE_REVIEW } from '../graphql/mutations';
 
 const styles = StyleSheet.create({
 	blockStyle: {
@@ -17,7 +19,8 @@ const styles = StyleSheet.create({
 	spreadStyleBody: {
 		flexDirection: 'row',
 		columnGap: 10,
-		alignItems: 'flex-start',
+		alignItems: 'center',
+		justifyContent: 'center',
 	},
 	spreadStyleFooter: {
 		flexDirection: 'row',
@@ -91,10 +94,12 @@ const RepositoryInfo = ({ repository }) => {
 	return <View>{repository && <RepositoryItem itemObj={repository} singleRepositoryViewFlag={true} />}</View>;
 };
 
-export const ReviewItem = ({ review, showRepoName }) => {
+export const ReviewItem = ({ review, showForReviews }) => {
 	// Single review item
 	const theWidth = 50;
 	const theHeight = 50;
+	const navigate = useNavigate();
+	const [mutate, result] = useMutation(DELETE_REVIEW);
 	return (
 		<View style={styles.blockStyle}>
 			<View style={styles.spreadStyleBody}>
@@ -112,7 +117,7 @@ export const ReviewItem = ({ review, showRepoName }) => {
 					</Text>
 				</View>
 				<View style={{ flex: 8 }}>
-					<Text style={styles.textBlackHeavy}>{showRepoName ? review.repository.fullName : review.user.username}</Text>
+					<Text style={styles.textBlackHeavy}>{showForReviews ? review.repository.fullName : review.user.username}</Text>
 					<Text style={styles.textGreyNormal}>{format(review.createdAt, 'MM.dd.yyyy')} </Text>
 					<View>
 						<Text style={styles.textGreyNormal}>{review.text} </Text>
@@ -120,6 +125,58 @@ export const ReviewItem = ({ review, showRepoName }) => {
 				</View>
 				<View style={{ flex: 0, justifyContent: 'center' }}></View>
 			</View>
+			{showForReviews && (
+			<View style={styles.spreadStyleBody}>
+				<Pressable onPress={() => navigate(`/repositories/${review.repository.id}`)} style={{flexGrow:1}}>
+					<View
+						style={{
+							backgroundColor: 'blue',
+							margin: 4,
+							borderRadius: 3,
+							padding: 6,
+						}}
+					>
+						<MyText>View repository</MyText>
+					</View>
+				</Pressable>
+				<Pressable onPress={() => Alert.alert('Delete Review', 'Are you sure you want to delete this review?',
+				    [
+				      {
+				        text: 'Cancel',
+				        onPress: () => Alert.alert('Cancel Pressed'),
+				        style: 'cancel',
+				      },
+				      {
+				        text: 'Delete',
+				        onPress: async () => {
+				        	const { data, refetch } = await mutate({ variables: { deleteReviewId: review.id } });
+				        	Alert.alert('Deleted a review!');
+				        	refetch();
+				        },
+				        style: 'delete',
+				      }, 
+				    ],
+				    {
+				      cancelable: true,
+				      onDismiss: () =>
+				        Alert.alert(
+				          'This alert was dismissed by tapping outside of the alert dialog.',
+				        ),
+				    })
+				}>
+					<View
+						style={{
+							backgroundColor: 'red',
+							margin: 4,
+							borderRadius: 3,
+							padding: 6,
+						}}
+					>
+						<MyText>Delete review</MyText>
+					</View>
+				</Pressable>
+			</View>
+			)}
 		</View>
 	);
 };

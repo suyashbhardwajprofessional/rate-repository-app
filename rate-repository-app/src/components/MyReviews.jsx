@@ -14,7 +14,7 @@ const MyReviews = () => {
 
 	return (<FlatList
 			data={userReviewNodes}
-			renderItem={({ item }) => <ReviewItem review={item} showRepoName />}
+			renderItem={({ item }) => <ReviewItem review={item} showForReviews />}
 			keyExtractor={({ id }) => id}
 		/>);
 };
