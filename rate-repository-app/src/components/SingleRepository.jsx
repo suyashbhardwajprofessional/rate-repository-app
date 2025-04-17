@@ -91,7 +91,7 @@ const RepositoryInfo = ({ repository }) => {
 	return <View>{repository && <RepositoryItem itemObj={repository} singleRepositoryViewFlag={true} />}</View>;
 };
 
-export const ReviewItem = ({ review }) => {
+export const ReviewItem = ({ review, showRepoName }) => {
 	// Single review item
 	const theWidth = 50;
 	const theHeight = 50;
@@ -112,7 +112,7 @@ export const ReviewItem = ({ review }) => {
 					</Text>
 				</View>
 				<View style={{ flex: 8 }}>
-					<Text style={styles.textBlackHeavy}>{review.user.username}</Text>
+					<Text style={styles.textBlackHeavy}>{showRepoName ? review.repository.fullName : review.user.username}</Text>
 					<Text style={styles.textGreyNormal}>{format(review.createdAt, 'MM.dd.yyyy')} </Text>
 					<View>
 						<Text style={styles.textGreyNormal}>{review.text} </Text>

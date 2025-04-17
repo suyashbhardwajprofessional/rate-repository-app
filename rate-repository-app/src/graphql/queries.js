@@ -34,6 +34,9 @@ export const ME = gql`
           node {
             text
             rating
+            repository {
+              fullName
+            }
             user {
               username
             }
