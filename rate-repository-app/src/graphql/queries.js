@@ -1,16 +1,17 @@
 import { gql } from '@apollo/client';
 
 export const GET_REPOSITORIES = gql`
-  query Repositories($orderBy: AllRepositoriesOrderBy, $orderDirection: OrderDirection, $searchKeyword: String) {
-    repositories(orderBy: $orderBy, orderDirection: $orderDirection, searchKeyword: $searchKeyword) {
+  query Repositories($first: Int, $after: String, $orderBy: AllRepositoriesOrderBy, $orderDirection: OrderDirection, $searchKeyword: String) {
+    repositories(first: $first, after: $after, orderBy: $orderBy, orderDirection: $orderDirection, searchKeyword: $searchKeyword) {
       edges {
         node {
           id
+          fullName
+          createdAt
           name
           language
           url
           forksCount
-          fullName
           description
           openIssuesCount
           ownerAvatarUrl
@@ -18,11 +19,18 @@ export const GET_REPOSITORIES = gql`
           reviewCount
           stargazersCount
         }
+        cursor
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+        startCursor
       }
       totalCount
     }
   }
 `;
+
 
 export const ME = gql`
   query getCurrentUser($includeReviews: Boolean = false) {
@@ -70,7 +78,7 @@ export const GET_REPOSITORY = gql`
 `;
 
 export const GET_REPOSITORY_WITH_REVIEWS = gql`
-  query ($repositoryId: ID!) {
+  query Repository($repositoryId: ID!, $first: Int, $after: String) {
     repository(id: $repositoryId) {
       id
       fullName
@@ -84,7 +92,7 @@ export const GET_REPOSITORY_WITH_REVIEWS = gql`
       ratingAverage
       reviewCount
       stargazersCount
-      reviews {
+      reviews(first: $first, after: $after) {
         edges {
           node {
             id
@@ -96,6 +104,12 @@ export const GET_REPOSITORY_WITH_REVIEWS = gql`
               username
             }
           }
+          cursor
+        }
+        pageInfo {
+          hasNextPage
+          endCursor
+          startCursor
         }
       }
     }

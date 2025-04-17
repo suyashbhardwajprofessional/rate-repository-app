@@ -84,7 +84,7 @@ const TopMenu = ({ userQuery, setUserQuery }) => {
   );
 };
 
-const RepositoryListContainer = ({ repositories, userQuery, setUserQuery }) => {
+const RepositoryListContainer = ({ repositories, userQuery, setUserQuery, onEndReach }) => {
   const { data, error, loading } = useQuery(ME, { fetchPolicy: 'cache-and-network' });
   const [loginStatus, setLoginStatus] = useState(false);
   // Get the nodes from the edges array
@@ -108,6 +108,8 @@ const RepositoryListContainer = ({ repositories, userQuery, setUserQuery }) => {
             </Pressable>
           )}
           keyExtractor={item => item.id}
+          onEndReached={onEndReach}
+          onEndReachedThreshold={0.5}
         />
       ) : (
         <View style={{ flex: 1, alignItems: 'center' }}>
@@ -120,9 +122,10 @@ const RepositoryListContainer = ({ repositories, userQuery, setUserQuery }) => {
 
 const RepositoryList = () => {
   const [userQuery, setUserQuery] = useState({ theOrderPrinciple: 'CREATED_AT', theOrderDirection: 'DESC', searchKey: '' });
-  const { repositories } = useRepositories(userQuery.theOrderPrinciple, userQuery.theOrderDirection, userQuery.searchKey);
+  const { repositories, fetchMore } = useRepositories({ orderBy:userQuery.theOrderPrinciple, orderDirection:userQuery.theOrderDirection, searchKeyword:userQuery.searchKey, first:5 });
+  const onEndReach = () => { console.log('fetching more...'); fetchMore(); };
 
-  return <RepositoryListContainer repositories={repositories} userQuery={userQuery} setUserQuery={setUserQuery} />;
+  return <RepositoryListContainer repositories={repositories} userQuery={userQuery} setUserQuery={setUserQuery} onEndReach={onEndReach} />;
 };
 
 export default RepositoryList;

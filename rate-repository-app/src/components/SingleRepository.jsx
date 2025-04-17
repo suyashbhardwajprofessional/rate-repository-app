@@ -69,12 +69,29 @@ const styles = StyleSheet.create({
 
 const SingleRepository = () => {
 	const id = useParams().id;
+	const variables = { repositoryId: id, first: 4 };
 	const [theRepositoryWithReviews, setTheRepositoryWithReviews] = useState();
-	const { data, error, loading } = useQuery(GET_REPOSITORY_WITH_REVIEWS, {
+	const { data, error, loading, fetchMore, ...result } = useQuery(GET_REPOSITORY_WITH_REVIEWS, {
 		fetchPolicy: 'cache-and-network',
-		variables: { repositoryId: id },
+		variables
 	});
 	const repositoryNodes = theRepositoryWithReviews ? theRepositoryWithReviews.reviews.edges.map(edge => edge.node) : [];
+	const handleFetchMore = () => {
+	    const canFetchMore = !loading && data?.repository.reviews.pageInfo.hasNextPage;
+
+	    if (!canFetchMore) {
+	      return;
+	    }
+
+	    fetchMore({
+	      variables: {
+	        after: data.repository.reviews.pageInfo.endCursor,
+	        ...variables,
+	      },
+	    });
+	};
+
+	const onEndReach = () => { console.log('fetching more reviews...'); handleFetchMore(); };
 
 	useEffect(() => {
 		data && data.repository && setTheRepositoryWithReviews(data.repository);
@@ -86,6 +103,8 @@ const SingleRepository = () => {
 			renderItem={({ item }) => <ReviewItem review={item} />}
 			keyExtractor={({ id }) => id}
 			ListHeaderComponent={() => <RepositoryInfo repository={theRepositoryWithReviews} />}
+			onEndReached={onEndReach}
+          	onEndReachedThreshold={0.5}
 		/>
 	);
 };
